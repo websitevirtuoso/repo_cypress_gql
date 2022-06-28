@@ -1,0 +1,7 @@
+#import "../fragments/country.fragment.gql"
+
+query GetCountries {
+  countries  {
+    ...CountryFragment
+  }
+}
