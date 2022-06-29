@@ -1,4 +1,7 @@
 import { defineConfig } from 'cypress'
+// import webpackPreprocessor from '@cypress/webpack-preprocessor'
+// If you add webpack, import it here
+// import webpackConfig from './webpack.config'
 
 export default defineConfig({
   e2e: {
@@ -16,5 +19,17 @@ export default defineConfig({
     // downloadsFolder: 'cypress/e2e/downloads',
     // screenshotsFolder: 'cypress/e2e/screenshots',
     // videosFolder: 'cypress/e2e/videos',
+
+    setupNodeEvents(on, config) {
+      const options = {
+        // TODO: webpack config that understands `#import` and `.graphql`.
+        // webpackOptions: webpackConfig,
+      }
+
+      // Apply preprocessor to cypress/* files, and all spec files.
+      // on('file:preprocessor', webpackPreprocessor(options))
+
+      return config
+    },
   },
 })
