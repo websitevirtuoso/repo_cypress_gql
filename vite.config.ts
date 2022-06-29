@@ -34,20 +34,12 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['@apollo/client/core'],
+    include: [
+      '@apollo/client/core', 
+      '@apollo/client/link/error',
+      'vuetify/lib/components/VCard/index.mjs',
+      'vuetify/lib/components/VTable/index.mjs'
+    ],
     exclude: ['@apollo/client'],
   },
-  /* remove the need to specify .vue files https://vitejs.dev/config/#resolve-extensions
-  resolve: {
-    extensions: [
-      '.js',
-      '.json',
-      '.jsx',
-      '.mjs',
-      '.ts',
-      '.tsx',
-      '.vue',
-    ]
-  },
-  */
 })
